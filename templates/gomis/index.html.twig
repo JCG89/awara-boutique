@@ -5,13 +5,13 @@
 {% endblock %}
 
 {% block content %}
-  <h3>
-    Nos Meilleurs ventes
+<div class ="title-home">
+   <h3 class ="text-center">
+    <strong>NOS MEILLEURS VENTES
   </h3>
-  <p>
-    Decouvrez nos produits les plus vendus
-  </p>
-  <div class="row">
+</div class ="mesdiv">
+ <div>
+    <div class="row">
     {% for produit in produits %}
       <div class="col-md-3">
         {% include 'produit/single_produit.html.twig' %}
@@ -20,5 +20,6 @@
   </div>
   <!-- /.row -->
   <div>
+</div>
    
 {% endblock %}

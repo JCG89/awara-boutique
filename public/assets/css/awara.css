@@ -86,16 +86,24 @@ body{
 .mesdiv{
     margin-top:50px;
     text-align: center;
-    background-color:  skyblue;
+    background-color:  #dfeaff;
     border: radius 10px;
+}
+.mesdiv-produit{
+    background-color: #dfeaff;
+}
+.title-home{
+    margin-top: 50px;
+    margin-bottom: 30px;
 }
 
 .card{
     opacity:1;
-    padding-block: 1px;
+    padding-inline-start: 5px;
+    margin-bottom: 10px;
 }
 .card:hover{
-    color: #27AE60;
+    color: #dfeaff;
 }
 .title{
     margin-top: 150px;
