@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+  Boutique
+{% endblock %}
+
+{% block content %}
+  <div class="title">
+    <h3 class="text-center mt-5">
+      Nos Produits
+    </h3>
+  </div>
+  <div class="mesdiv">
+    <div class="row">
+      <div class="col-md-2">
+        <h3 class="mt-5 blue">
+          Filtrer
+        </h3>
+        {{ form(form) }}
+      </div>
+      <div class="col-md-10">
+        <div class="row produit-container">
+          {% for produit in produits %}
+            <div class="col-md-4">
+              {% include 'produit/single_produit.html.twig' %}
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

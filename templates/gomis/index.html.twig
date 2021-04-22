@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block carousel %}
+
+{% endblock %}
+
+{% block content %}
+  <h3>
+    Nos Meilleurs ventes
+  </h3>
+  <p>
+    Decouvrez nos produits les plus vendus
+  </p>
+  <div class="row">
+    {% for produit in produits %}
+      <div class="col-md-3">
+        {% include 'produit/single_produit.html.twig' %}
+      </div>
+    {% endfor %}
+  </div>
+  <!-- /.row -->
+  <div>
+   
+{% endblock %}

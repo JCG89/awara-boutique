@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+  ajaouter une adresse
+{% endblock %}
+
+{% block content %}
+<div class="title">
+    <h3 class="text-center mt-5">
+      <strong>Ajouter une adresse</strong>
+    </h3>
+  <div class="mesdiv">
+    <br />
+    {{ form_start(form) }}
+    <div class="row">
+      <div class="col-md-12">
+        <strong>{{ form_row(form.nomAdresse) }}</strong>
+      </div>
+      <div class="col-md-6">
+        <strong>{{ form_row(form.nom) }}</strong>
+      </div>
+      <div class="col-md-6">
+        <strong>{{ form_row(form.prenom) }}</strong>
+      </div>
+      <div class="col-md-6">
+        <strong>{{ form_row(form.entreprise) }}</strong>
+      </div>
+      <div class="col-md-6">
+        <strong>{{ form_row(form.adresse) }}</strong>
+      </div>
+      <div class="col-md-6">
+        <strong>{{ form_row(form.codePostal) }}</strong>
+      </div>
+      <div class="col-md-6">
+        <strong>{{ form_row(form.ville) }}</strong>
+      </div>
+      <div class="col-md-6">
+        <strong>{{ form_row(form.pays) }}</strong>
+      </div>
+      <div class="col-md-6">
+        <strong>{{ form_row(form.telephone) }}</strong>
+      </div>
+    </div>
+
+    {{ form_end(form) }}
+    {# <a href ="{{path('acount_adresse')}}">Retour!</a> #}
+    <hr />
+  </div>
+{% endblock %}

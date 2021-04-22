@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+  Nous contacter!
+{% endblock %}
+
+{% block content %}
+  <div class="title">
+    <h3 class="text-center mt-5">
+      <strong>Contactez-nous?</strong>
+    </h3>
+  </div>
+  <div class="mesdiv">
+    {% for message in app.flashes('notice') %}
+      <div class="alert alert-info">
+        {{ message }}
+      </div>
+    {% endfor %}
+    <div class="row">
+      <div class="col-md-8">
+        {{ form_start(form) }}
+        <div class="row">
+          <div class="col-md-6">
+            <strong>{{ form_row(form.nom) }}</strong>
+          </div>
+          <div class="col-md-6">
+            <strong>{{ form_row(form.prenom) }}</strong>
+          </div>
+          <div class="col-md-6">
+            <strong>{{ form_row(form.email) }}</strong>
+          </div>
+          <div class="col-md-6">
+            <strong>{{ form_row(form.content) }}</strong>
+          </div>
+        </div>
+
+        {{ form_end(form) }}
+      </div>
+      <div class="col-md-4">
+        <strong>La boutique de Jean Christophe Gomis</strong>
+        <hr />
+        <b>
+          06 21 45 60 56<br />
+          13 Rue Babeuf 94500 Champigny sur Marne<br />
+          christophegomis89@gmail.com
+        </b>
+      </div>
+    </div>
+  </div>
+{% endblock %}

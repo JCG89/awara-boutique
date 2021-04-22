@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+  {# <div class="mesdiv">
+    <h1>
+      Inscription
+    </h1>
+    {% if notification %}
+      <div class="alert alert-info">
+        {{ notification }}
+      </div>
+      <hr />
+    {% endif %}
+
+    {{ form(form) }}
+  </div> #}
+  <div class="title">
+    <h3 class="text-center mt-5">
+      Inscrivez-vous
+    </h3>
+  </div>
+  <div class="mesdiv">
+    <br />
+    {{ form_start(form) }}
+    <div class="row">
+      <div class="col-md-6">
+        <strong>{{ form_row(form.nom) }}</strong>
+      </div>
+      <div class="col-md-6">
+        <strong>{{ form_row(form.prenom) }}</strong>
+      </div>
+      <div class="col-md-6">
+        <strong>{{ form_row(form.email) }}</strong>
+      </div>
+      <div class="col-md-6">
+        <strong>{{ form_row(form.password) }}</strong>
+      </div>
+    </div>
+
+    {{ form_end(form) }}
+    {# <a href ="{{path('acount_adresse')}}">Retour!</a> #}
+    <hr />
+    <p class="text-center">
+      déjà inscris? <a href="{{ path('app_login') }}">connectez-vous</a>
+    </p>
+  </div>
+{% endblock %}
