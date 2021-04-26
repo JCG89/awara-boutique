@@ -14,42 +14,41 @@ class ResetPasswordType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-        ->add('new_password',RepeatedType::class, [
+            ->add('new_password', RepeatedType::class, [
 
-            'type'=>PasswordType::class,
+                'type' => PasswordType::class,
 
-            'invalid_message'=>'le mot de passe et la confirmation doivent être identiques!',
-            'mapped'=>false,
+                'invalid_message' => 'le mot de passe et la confirmation doivent être identiques!',
+                'mapped' => false,
 
-            'label'=>'Votre mot de passe',
-            
-            'required'=>true,
+                'label' => 'Votre mot de passe',
 
-            'first_options'=>['label'=>'Modifier mon mot de passe',
+                'required' => true,
 
-            'attr'=>[
-                'placeholder'=>'Veuillez modifier votre mot de passe'
-            ]
-            
-            ],
+                'first_options' => [
+                    'label' => 'Modifier mon mot de passe',
 
-            'second_options'=>['label'=>'Confirmer votre mot de passe',
-            'attr'=>[
-                'placeholder'=>'Veuillez confirmer votre nouveau mot de passe'
-            ]
-            
-            ]
-                        
-        ])
-          ->add('submit',SubmitType::class,[
-            'label'=>'Mettre à jour',
-            'attr'=>[
-                'class'=>'btn btn-info'
-            ]
-        ])
-        
-        ;
+                    'attr' => [
+                        'placeholder' => 'Veuillez modifier votre mot de passe'
+                    ]
 
+                ],
+
+                'second_options' => [
+                    'label' => 'Confirmer votre mot de passe',
+                    'attr' => [
+                        'placeholder' => 'Veuillez confirmer votre nouveau mot de passe'
+                    ]
+
+                ]
+
+            ])
+            ->add('submit', SubmitType::class, [
+                'label' => 'Mettre à jour',
+                'attr' => [
+                    'class' => 'btn btn-primary'
+                ]
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver)

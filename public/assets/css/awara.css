@@ -5,6 +5,7 @@
 body{
     position:relative;
     margin-bottom: 5px;
+    color: black;
 }
 
 .footer-custom{
@@ -53,7 +54,7 @@ body{
     margin: 0 auto;
 }
 .form-check{
-    background-color: #f4f8ff;
+    background-color: skyblue;
     padding: 20px 65px;
     margin-top: 7px;
 }
@@ -81,16 +82,18 @@ body{
 .compte{
     margin-top:100px;
     text-align: center;
-    background-color: #dfeaff;
+    background-color: skyblue;
 }
 .mesdiv{
     margin-top:50px;
     text-align: center;
-    background-color:  #dfeaff;
-    border: radius 10px;
+    background-color:  skyblue;
+    border-radius: 10px
 }
+
 .mesdiv-produit{
-    background-color: #dfeaff;
+    background-color: skyblue;
+    border-radius: 10px;
 }
 .title-home{
     margin-top: 50px;
@@ -99,18 +102,25 @@ body{
 
 .card{
     opacity:1;
+    transition: 2s ;
     padding-inline-start: 5px;
     margin-bottom: 10px;
 }
 .card:hover{
-    color: #dfeaff;
+    color: #27ae60;
+}
+.card img:hover{
+  opacity: 1;
+  color: red;
 }
 .title{
     margin-top: 150px;
    
 }
-.title h1{
-    color: skyblue;
+.row{
+    text-align: justify;
 }
+
+
 
 
