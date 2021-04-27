@@ -46,7 +46,7 @@ class ResetPasswordType extends AbstractType
             ->add('submit', SubmitType::class, [
                 'label' => 'Mettre à jour',
                 'attr' => [
-                    'class' => 'btn btn-primary'
+                    'class' => 'btn btn-success btn-block'
                 ]
             ]);
     }
