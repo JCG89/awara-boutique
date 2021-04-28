@@ -54,7 +54,7 @@ body{
     margin: 0 auto;
 }
 .form-check{
-    background-color: skyblue;
+    background-color: #e1f0eb;
     padding: 20px 65px;
     margin-top: 7px;
 }
@@ -82,17 +82,20 @@ body{
 .compte{
     margin-top:100px;
     text-align: center;
-    background-color: skyblue;
+    background-color: #e1f0eb;
 }
 .mesdiv{
     margin-top:50px;
     text-align: center;
-    background-color:  skyblue;
+    background-color:  #e1f0eb;
     border-radius: 10px
+}
+.mesdiv p{
+    text-align: justify;
 }
 
 .mesdiv-produit{
-    background-color: skyblue;
+    background-color: #e1f0eb;
     border-radius: 10px;
 }
 .title-home{
@@ -107,11 +110,11 @@ body{
     margin-bottom: 10px;
 }
 .card:hover{
-    color: #27ae60;
+    color: #f73431;
 }
 .card img:hover{
   opacity: 1;
-  color: red;
+  color: #27AE60;
 }
 .title{
     margin-top: 150px;
@@ -119,7 +122,9 @@ body{
 }
 .row{
     text-align: justify;
+    
 }
+
 
 
 
