@@ -11,8 +11,8 @@
 <div class ="mesdiv">
 Bienevenue {{ app.user.prenom}}  <br>
 <a href ="{{path('acount_order')}}">Retour à mes commandes!</a>
- <hr><strong></strong>
-
+<hr><strong></strong>
+  <div class ="command">
  Statut de la commande: 
           {% if order.state == 1 %} 
            <strong>Paiement accepté</strong>
@@ -26,6 +26,7 @@ Commande passée le :{{ order.createdAt|date('d/m/Y')}}</br>
  Référence de ma commande: <strong>{{order.reference }}</strong></br>
  Transporteur choisi: <strong>{{order.carrierName }}</strong>
  <hr>
+ </div>
 <strong> Détails: </strong>
 <table class="table mt-4">
   <thead>

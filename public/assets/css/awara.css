@@ -6,6 +6,7 @@ body{
     position:relative;
     margin-bottom: 5px;
     color: black;
+    background-color: #e1f0eb;
 }
 
 .footer-custom{
@@ -124,6 +125,13 @@ body{
     text-align: justify;
     
 }
+.command{
+    text-align:justify;
+}
+.card-body{
+    text-align:center;
+}
+
 
 
 
