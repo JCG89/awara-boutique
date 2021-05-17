@@ -9,14 +9,6 @@ body{
     background-color: #e1f0eb;
 }
 
-.footer-custom{
-    text-align: center;
-    position: absolute;
-    width: 100%;
-    background-color: #dfeaff;
-    padding-top: 25px;
-    margin-top: 50px;
-}
 .produit-item{
     margin-top: 30px;
 }
@@ -130,6 +122,18 @@ body{
 }
 .card-body{
     text-align:center;
+}
+.footer-custom{
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    background-color: #dfeaff;
+    padding-top: 25px;
+    margin-top: 50px;
+}
+.social{
+    float: left;
+    margin-left: 40px;
 }
 
 

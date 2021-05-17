@@ -8,12 +8,12 @@
       Confirmation de ma commande
     </h3>
   </div>
- <div class="mesdiv">
-    <p class "validate"> 
+ <div class="mesdiv text-justify">
+    <p class "text-justify"> 
     
     Bonjour <strong>{{order.user.prenom}} {{order.user.nom}}</strong>,<br/><br/>
-    Nous vous remercions pour votre commande n°<strong>{{order.reference}}</strong></br>
-    Une Confirmation vien de vous être envoyé à l'adresse <strong>{{order.user.email}}</strong>
+    Nous vous remercions pour votre commande n°{{order.reference}}</br>
+    Une Confirmation vien de vous être envoyé à l'adresse {{order.user.email}}
     <hr>
     Vôtre commande vous sera livrée par <strong>{{order.carrierName}}</strong> à l'adresse suivante: </br>
 
@@ -22,5 +22,5 @@
     Pour suivre votre commande Rendez vous dans votre compte <a href ="{{path('acount_order')}}"class = "btn btn-success"> Mes commandes </a>
    
   </p>
-    </div>
+</div>
 {% endblock %}
