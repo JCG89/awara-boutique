@@ -6,6 +6,7 @@ use App\Entity\User;
 use App\Form\InscriptionType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
+use MercurySeries\FlashyBundle\FlashyNotifier;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -23,9 +24,8 @@ class InscriptionController extends AbstractController
     /**
      * @Route("/inscription", name="inscription")
      */
-    public function index(Request $request, UserPasswordEncoderInterface $encoder): Response
+    public function index(Request $request, UserPasswordEncoderInterface $encoder,  FlashyNotifier  $flashy): Response
     {
-        $notification = null;
 
         $user = new User();
         $form = $this->createForm(InscriptionType::class, $user);
@@ -45,18 +45,19 @@ class InscriptionController extends AbstractController
             $this->em->flush();
 
             // $mail = new Mail();
-            // $content = 'Bonjour'.'$user->getPrenom().'</br>Bienvenu dans KinkiHair'</br>
+            // $content = 'Bonjour'.'$user->getPrenom().'</br>Bienvenu dans Awar-boutique'</br>
             // $mail->send(user->getEmail),user->getPrenom(), 'Bienvenue dans Kinkihair'
 
-            $notification = 'Votre inscription a bien été pris en compte vous pouvez dés à présent vous connecter à votre compte';
+            // $notification = 'Votre inscription a bien été pris en compte vous pouvez dés à présent vous connecter à votre compte';           
             //   }
 
             //    else{
 
             //     $notification = 'L\'email que vous avez renseigné existe déjà !';
             // }
+            $flashy->success('notification!', 'http://your-awesome-link.com');
 
-            return $this->redirectToRoute('gomis');
+            return $this->redirectToRoute('app_login');
         }
 
 
@@ -64,7 +65,7 @@ class InscriptionController extends AbstractController
 
             'form' => $form->createView(),
 
-            'notification' => $notification
+            // 'notification' => $notification
 
         ]);
     }
