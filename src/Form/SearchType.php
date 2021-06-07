@@ -32,7 +32,7 @@ class SearchType extends AbstractType
                 'expanded' => true
             ])
             ->add('submit', SubmitType::class, [
-                'label' => 'filtre',
+                'label' => 'valider',
                 'attr' => [
                     'class' => 'btn-block btn-primary'
                 ]

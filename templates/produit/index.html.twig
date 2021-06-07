@@ -1,32 +1,30 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-  Boutique
+	Boutique
 {% endblock %}
 
 {% block content %}
-  <div class="title">
-    <h1 class="text-center mt-5">
-      NOS PRODUITS
-    </h1>
-  </div>
-  <div class="mesdiv-produit">
-    <div class="row">
-      <div class="col-md-2">
-        <!--     <h3 class="mt-5 blue">
-          Filtrer
-        </h3>     -->
-        {{ form(form) }}
-      </div>
-      <div class="col-md-10">
-        <div class="row produit-container">
-          {% for produit in produits %}
-            <div class="col-md-4">
-              {% include 'produit/single_produit.html.twig' %}
-            </div>
-          {% endfor %}
-        </div>
-      </div>
-    </div>
-  </div>
-{% endblock %}
+	<div class="title">
+		<h1 class="text-center mt-5">
+			NOS PRODUITS
+		</h1>
+	</div>
+	<div class="mesdiv-produit">
+		<div class="row">
+			<div class="col-md-2">
+
+				{{ form(form) }}
+				</div>
+				<div class="col-md-10">
+					<div class="row produit-container">
+						{% for produit in produits %}
+							<div class="col-md-4">
+								{% include 'produit/single_produit.html.twig' %}
+							</div>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		</div>
+	{% endblock %}
