@@ -16,7 +16,8 @@ class ProduitController extends AbstractController
 
     private $em;
 
-    public function __construct(EntityManagerInterface $em){
+    public function __construct(EntityManagerInterface $em)
+    {
         $this->em = $em;
     }
     /**
@@ -24,54 +25,47 @@ class ProduitController extends AbstractController
      */
     public function index(Request $request): Response
     {
-      
-          $search = new Search();
-           
 
-         $form = $this->createForm(SearchType::class, $search);
+        $search = new Search();
 
-         $form->handleRequest($request);
-         
-         if($form->isSubmitted() && $form->isValid()){
-            $produits =$this->em->getRepository(Produits::class)->findWithSearch($search);
-         }
-         else{
+
+        $form = $this->createForm(SearchType::class, $search);
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $produits = $this->em->getRepository(Produits::class)->findWithSearch($search);
+        } else {
             $produits = $this->em->getRepository(Produits::class)->findAll();
+        }
 
-         }
-            
-        
+        return $this->render('produit/index.html.twig', [
 
-        return $this->render('produit/index.html.twig',[
+            'produits' => $produits,
+            'form' => $form->createView()
 
-            'produits'=> $produits,
-            'form'=> $form->createView()
-            
         ]);
-        
     }
-    
+
     /**
      * @Route("/produit/{slug}", name="produit")
      */
     public function show($slug): Response
     {
-        
+
         $produit = $this->em->getRepository(Produits::class)->findOneBySlug($slug);
         $produits = $this->em->getRepository(Produits::class)->findByIsBest(1);
 
 
-              if(!$produit){
+        if (!$produit) {
 
-                return $this->redirectToRoute('produits');
+            return $this->redirectToRoute('produits');
+        }
 
-              }
-           
-        return $this->render('produit/show.html.twig',[
+        return $this->render('produit/show.html.twig', [
 
-            'produit'=> $produit,
-            'produits'=>$produits
+            'produit' => $produit,
+            'produits' => $produits
         ]);
-        
     }
 }
