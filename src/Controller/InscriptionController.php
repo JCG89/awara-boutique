@@ -26,7 +26,7 @@ class InscriptionController extends AbstractController
      */
     public function index(Request $request, UserPasswordEncoderInterface $encoder): Response
     {
-
+        //  Instanciation de l'objet user et la logique d'envoi du formulaire d'inscription.
         $user = new User();
         $form = $this->createForm(InscriptionType::class, $user);
 
@@ -35,24 +35,12 @@ class InscriptionController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
 
             $user = $form->getData();
-            //    $search_email= $this->em->getRepository( User::class)->findOneByEmail($user->getEmail());
 
-            //    if(!$search_email){
             $password = $encoder->encodePassword($user, $user->getPassword());
             $user->setPassword($password);
 
             $this->em->persist($user);
             $this->em->flush();
-
-
-
-            // $notification = 'Votre inscription a bien été pris en compte vous pouvez dés à présent vous connecter à votre compte';           
-            //   }
-
-            //    else{
-
-            //     $notification = 'L\'email que vous avez renseigné existe déjà !';
-            // }
 
             return $this->redirectToRoute('app_login');
         }

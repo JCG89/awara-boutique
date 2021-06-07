@@ -34,11 +34,13 @@ class ProduitController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            // Récuperation du produit par la recherche
             $produits = $this->em->getRepository(Produits::class)->findWithSearch($search);
         } else {
+            // Récuperation de tout les produits par la méthode findAll()
             $produits = $this->em->getRepository(Produits::class)->findAll();
         }
-
+        //  Le rendu du formulaire par la vue
         return $this->render('produit/index.html.twig', [
 
             'produits' => $produits,
