@@ -24,7 +24,7 @@ class InscriptionController extends AbstractController
     /**
      * @Route("/inscription", name="inscription")
      */
-    public function index(Request $request, UserPasswordEncoderInterface $encoder,  FlashyNotifier  $flashy): Response
+    public function index(Request $request, UserPasswordEncoderInterface $encoder): Response
     {
 
         $user = new User();
@@ -44,9 +44,7 @@ class InscriptionController extends AbstractController
             $this->em->persist($user);
             $this->em->flush();
 
-            // $mail = new Mail();
-            // $content = 'Bonjour'.'$user->getPrenom().'</br>Bienvenu dans Awar-boutique'</br>
-            // $mail->send(user->getEmail),user->getPrenom(), 'Bienvenue dans Kinkihair'
+
 
             // $notification = 'Votre inscription a bien été pris en compte vous pouvez dés à présent vous connecter à votre compte';           
             //   }
@@ -55,7 +53,6 @@ class InscriptionController extends AbstractController
 
             //     $notification = 'L\'email que vous avez renseigné existe déjà !';
             // }
-            $flashy->success('notification!', 'http://your-awesome-link.com');
 
             return $this->redirectToRoute('app_login');
         }
